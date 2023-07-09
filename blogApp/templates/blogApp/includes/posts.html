@@ -1,0 +1,16 @@
+{% load static %}
+
+
+<li>
+    <article class="post">
+        <a href="{% url 'detail-post' post.slug %}">
+            <img src="{% static 'blogApp/images/'|add:post.img %}" alt="{{post.title}}">
+            <div class="time">
+                <h3>{{post.title}}</h3>
+                <p>
+                  {{post.excerpt}}
+                </p>
+            </div>
+        </a>
+    </article>
+</li>

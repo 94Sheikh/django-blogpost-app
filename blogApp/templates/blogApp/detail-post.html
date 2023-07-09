@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css_fille %}
+<link rel="stylesheet" href="{% static 'blogApp/post-detail.css' %}">
+{% endblock css_fille %}
+
+
+{% block page_title %}
+{{identified_post.title}}
+{% endblock %}
+
+{% block content %}
+<section id="summary">
+    <h2>{{identified_post.title}}</h2>
+    <article>
+        <img src="{% static 'blogApp/images/'|add:identified_post.img %}" alt="{{identified_post.title}}">
+        <address>By {{identified_post.author}}</address>
+        <div>
+            Last update on <time>{{identified_post.date|date:"d M Y"}}</time>
+        </div>
+    </article>
+</section>
+
+<main>
+{{identified_post.content|linebreaks}}
+</main>
+{% endblock content %}

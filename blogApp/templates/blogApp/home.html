@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_fille %}
+<link rel="stylesheet" href="{% static 'blogApp/home.css' %}">
+<link rel="stylesheet" href="{% static 'blogApp/includes/posts.css' %}">
+{% endblock css_fille %}
+{% block page_title %}my-blog-app{% endblock page_title %}
+
+{% block content %}
+
+
+
+<section id="welcome">
+    <header>
+        <img src="{% static 'blogApp/images/max.png' %}" alt="zulfiqar-- the author of this blog">
+        <h2>Zulfiqar' Blogs</h2>
+    </header>
+    <p>Hi, I am Zulfiqar & Love to Learn new Technology & about World!</p>
+</section>
+
+<section id="latest-posts">
+    <h2>My Latest thoughts!</h2>
+    <ul>
+
+        {% for post in posts%}
+         {% include 'blogApp/includes/posts.html' %}
+        {% endfor %}
+    </ul>
+
+</section>
+
+<section id="about">
+    <h2>What I do</h2>
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Autem repellendus temporibus adipisci omnis ullam fuga velit beatae modi illo veritatis blanditiis aliquid sit
+        unde,
+        consequuntur nesciunt officiis minima, est molestias.
+    </p>
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Aut voluptate accusantium, eum est illo voluptas rerum fuga ut libero similique quasi iure et,
+        at, exercitationem ipsam aspernatur? Esse, inventore expedita?
+    </p>
+</section>
+
+{% endblock content %}

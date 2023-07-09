@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    {% block css_fille %}{% endblock css_fille %}
+    <title>{% block page_title %} {% endblock %}</title>   
+</head>
+
+
+<body>
+    <header id="main-navigation">
+        <a href="{% url 'home-page' %}">
+            <h1>Zulfiqar' Blogs</h1>
+        </a>
+        <nav>
+            <a href="{% url 'all-posts' %}">
+                <h2>All Posts</h2>
+            </a>
+        </nav>
+    </header>
+    {% block content %}
+   
+    {% endblock content %}
+</body>
+</html>

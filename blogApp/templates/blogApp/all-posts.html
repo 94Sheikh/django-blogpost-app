@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_fille %}
+<link rel="stylesheet" href="{% static 'blogApp/all-posts.css' %}">
+<link rel="stylesheet" href="{% static 'blogApp/includes/posts.css' %}">
+{% endblock css_fille %}
+{% block page_title %}all-post-page{% endblock page_title %}
+
+{% block content %}
+
+
+
+<section id="all-posts">
+    <h2>My All Blog Posts!<h2>
+    <ul>
+        {% for post in posts%}
+         {% include 'blogApp/includes/posts.html' %}
+        {% endfor %}
+    </ul>
+
+</section>
+
+
+{% endblock content %}
